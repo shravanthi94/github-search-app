@@ -1,12 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { useState } from 'react';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import AddIcon from '@material-ui/icons/Add';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import './css/Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ onSubmit }) => {
+  const [query, setquery] = useState('');
+
   return (
     <nav class='navbar navbar-expand-sm navbar-background'>
       <a class='navbar-brand' className='mr-4 py-2'>
@@ -21,11 +23,14 @@ const Navbar = () => {
         <span class='navbar-toggler-icon'></span>
       </button>
 
-      <form class='form-inline my-2 my-lg-0 mr-4'>
+      <form class='form-inline my-2 my-lg-0 mr-4' onSubmit={onSubmit(query)}>
         <input
           class='form-control mr-sm-2'
           type='search'
           placeholder='Search or jump to...'
+          name='query'
+          value={query}
+          onChange={(e) => setquery(e.target.value)}
         />
         <button class='btn btn-outline-success my-2 my-sm-0' type='submit'>
           Search
