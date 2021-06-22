@@ -4,11 +4,14 @@ import CallMergeIcon from '@material-ui/icons/CallMerge';
 import BugReportOutlinedIcon from '@material-ui/icons/BugReportOutlined';
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import SortIcon from '@material-ui/icons/Sort';
+import './css/repo.css';
 
 const Repo = (props) => {
   return (
     <li class='list-group-item'>
-      <a href={props.link}>{props.name}</a>
+      <a href={props.link} className='font-weight-bold repo-name'>
+        {props.name}
+      </a>
       <div>
         <h4>{props.title}</h4>
         <p>{props.description}</p>

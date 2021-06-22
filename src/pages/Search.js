@@ -8,12 +8,15 @@ import Pagination from 'react-js-pagination';
 
 const Search = () => {
   const [repos, setrepos] = useState([]);
-  const [sort, setsort] = useState('stars');
+  const [sort, setsort] = useState('Select sort...');
 
   const [activePage, setactivePage] = useState(1);
 
   const onSubmit = (e, value) => {
     e.preventDefault();
+    if (value === '') {
+      setrepos([]);
+    }
     axios
       .get(`https://api.github.com/search/repositories?q=${value}`)
       .then((result) => {
@@ -99,7 +102,7 @@ const Search = () => {
               pageRangeDisplayed={3}
               onChange={handlePageChange}
               itemClass='page-item page-link'
-              activeClass='active'
+              activeClass='active-item'
             />
           </div>
         </Fragment>
