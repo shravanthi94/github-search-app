@@ -2,35 +2,30 @@ const calculateRank = (data) => {
   // stargazers_count
   // open_issues_count
   // forks
-  let result = {
-    stars: 0,
-    issues: 0,
-    forks: 0,
-  };
-
-  let ranks = [];
-  let i = 0;
+  let maxStars = 0,
+    maxIssues = 0,
+    maxForks = 0;
 
   data.forEach((item) => {
-    if (item.stargazers_count > result.stars) {
-      result.stars = item.stargazers_count;
+    if (item.stargazers_count > maxStars) {
+      maxStars = item.stargazers_count;
     }
-    if (item.open_issues_count > result.issues) {
-      result.issues = item.open_issues_count;
+    if (item.open_issues_count > maxIssues) {
+      maxIssues = item.open_issues_count;
     }
-    if (item.forks > result.forks) {
-      result.forks = item.forks;
+    if (item.forks > maxForks) {
+      maxForks = item.forks;
     }
   });
 
   data.forEach((item) => {
-    ranks[i++] =
-      (item.stargazers_count / result.stars) * 6 +
-      (item.open_issues_count / result.issues) * 2 +
-      (item.forks / result.forks) * 2;
+    item.rank =
+      (item.stargazers_count / maxStars) * 6 +
+      (item.open_issues_count / maxIssues) * 2 +
+      (item.forks / maxForks) * 2;
   });
 
-  return ranks;
+  return data;
 };
 
 export default calculateRank;

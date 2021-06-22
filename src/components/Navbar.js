@@ -42,10 +42,10 @@ const Navbar = ({ onSubmit }) => {
 
       <div class='collapse navbar-collapse' id='navbarSupportedContent'>
         <div class='flex'>
-          <a class='mr-3 font-semibold hover:text-gray-400'>Pull requests</a>
-          <a class='mr-3 font-semibold hover:text-gray-400'>Issues</a>
-          <a class='mr-3 font-semibold hover:text-gray-400'>Marketplace</a>
-          <a class='mr-3 font-semibold hover:text-gray-400'>Explore</a>
+          <a class='mr-3 font-weight-bold'>Pull requests</a>
+          <a class='mr-3 font-weight-bold'>Issues</a>
+          <a class='mr-3 font-weight-bold'>Marketplace</a>
+          <a class='mr-3 font-weight-bold'>Explore</a>
         </div>
       </div>
 

@@ -10,3 +10,18 @@ body {
   text-align: center;
   padding: 30px;
 }
+
+.sort-dropdown {
+  color: #24292e;
+  background-color: #fafbfc;
+  border-color: #1b1f2326;
+  user-select: none;
+  border: 1px solid #1b1f2326;
+  border-radius: 6px;
+  white-space: nowrap;
+  vertical-align: middle;
+  margin-bottom: 30px;
+  transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  transition-property: color, background-color, border-color;
+  font-size: small;
+}
