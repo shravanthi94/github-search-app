@@ -23,7 +23,10 @@ const Navbar = ({ onSubmit }) => {
         <span class='navbar-toggler-icon'></span>
       </button>
 
-      <form class='form-inline my-2 my-lg-0 mr-4' onSubmit={onSubmit(query)}>
+      <form
+        class='form-inline my-2 my-lg-0 mr-4'
+        onSubmit={(e) => onSubmit(e, query)}
+      >
         <input
           class='form-control mr-sm-2'
           type='search'
