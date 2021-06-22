@@ -11,11 +11,7 @@ const Search = () => {
     axios
       .get(`https://api.github.com/search/repositories?q=${value}`)
       .then((result) => {
-        var data = result.data.items;
-        data.sort((a, b) => {
-          return a.city.localeCompare(b.city) || b.price - a.price;
-        });
-        setrepos(data);
+        setrepos(result.data.items);
       })
       .catch((error) => console.error(error));
   };

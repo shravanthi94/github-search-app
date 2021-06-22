@@ -8,8 +8,9 @@ const Repo = (props) => {
         {props.name}
       </a>
       <div>
-        <h3>{props.title}</h3>
+        <h4>{props.title}</h4>
         <p>{props.description}</p>
+        <p>Rank:{props.rank}</p>
       </div>
     </li>
   );
