@@ -22,12 +22,16 @@ const Repo = (props) => {
               <p>{props.stars}</p>
             </div>
           </div>
-          <div class='p-2'>
-            <div class='d-flex flex-row'>
-              <FiberManualRecordIcon fontSize='small' />
-              <p>{props.language}</p>
+          {props.language !== '' ? (
+            <div class='p-2'>
+              <div class='d-flex flex-row'>
+                <FiberManualRecordIcon fontSize='small' />
+                <p>{props.language}</p>
+              </div>
             </div>
-          </div>
+          ) : (
+            ''
+          )}
           <div class='p-2'>
             <div class='d-flex flex-row'>
               <SortIcon fontSize='small' />

@@ -8,7 +8,7 @@ import Pagination from 'react-js-pagination';
 
 const Search = () => {
   const [repos, setrepos] = useState([]);
-  const [sort, setsort] = useState('Select sort...');
+  const [sort, setsort] = useState('Good fit');
 
   const [activePage, setactivePage] = useState(1);
 
@@ -21,7 +21,11 @@ const Search = () => {
       .get(`https://api.github.com/search/repositories?q=${value}`)
       .then((result) => {
         let data = calculateRank(result.data.items);
-        setrepos(data);
+        setrepos(
+          data.sort((a, b) => {
+            return b.rank - a.rank;
+          }),
+        );
       })
       .catch((error) => console.error(error));
   };
@@ -50,7 +54,7 @@ const Search = () => {
           return b.stargazers_count - a.stargazers_count;
         }),
       );
-    } else if (e.target.value === 'Best fit') {
+    } else if (e.target.value === 'Good fit') {
       setrepos(
         repos.sort((a, b) => {
           return b.rank - a.rank;
@@ -86,8 +90,8 @@ const Search = () => {
                   <option className='dropdownOptionLabel' value='Stars'>
                     Sort: Stars
                   </option>
-                  <option className='dropdownOptionLabel' value='Best fit'>
-                    Sort: Best fit
+                  <option className='dropdownOptionLabel' value='Good fit'>
+                    Sort: Good fit
                   </option>
                 </select>
               </div>

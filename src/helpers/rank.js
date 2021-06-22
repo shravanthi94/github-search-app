@@ -20,7 +20,7 @@ const calculateRank = (data) => {
 
   data.forEach((item) => {
     item.rank =
-      (item.stargazers_count / maxStars) * 6 +
+      (item.stargazers_count / maxStars) * 6 -
       (item.open_issues_count / maxIssues) * 2 +
       (item.forks / maxForks) * 2;
   });
