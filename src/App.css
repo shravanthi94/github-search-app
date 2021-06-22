@@ -25,3 +25,8 @@ body {
   transition-property: color, background-color, border-color;
   font-size: small;
 }
+
+.pagination {
+  margin-left: 25%;
+  margin-bottom: 10%;
+}

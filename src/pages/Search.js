@@ -4,10 +4,13 @@ import axios from 'axios';
 import Navbar from '../components/Navbar';
 import RepoList from '../components/RepoList';
 import calculateRank from '../helpers/rank';
+import Pagination from 'react-js-pagination';
 
 const Search = () => {
   const [repos, setrepos] = useState([]);
   const [sort, setsort] = useState('stars');
+
+  const [activePage, setactivePage] = useState(1);
 
   const onSubmit = (e, value) => {
     e.preventDefault();
@@ -18,6 +21,15 @@ const Search = () => {
         setrepos(data);
       })
       .catch((error) => console.error(error));
+  };
+
+  // Logic for displaying current
+  const indexOfLast = activePage * 10;
+  const indexOfFirst = indexOfLast - 10;
+  const currentRepos = repos.slice(indexOfFirst, indexOfLast);
+
+  const handlePageChange = (pageNumber) => {
+    setactivePage(pageNumber);
   };
 
   const sortList = (e) => {
@@ -57,7 +69,7 @@ const Search = () => {
               <div class='col-6'></div>
               <div class='col-2'>
                 <select
-                  className='dropdown sort-dropdown px-4 py-1'
+                  className='sort-dropdown px-4 py-1'
                   name='sort'
                   value={sort}
                   onChange={(e) => sortList(e)}
@@ -78,7 +90,18 @@ const Search = () => {
               </div>
             </div>
           </div>
-          <RepoList repos={repos} />
+          <RepoList repos={currentRepos} />
+          <div className='pagination'>
+            <Pagination
+              activePage={activePage}
+              itemsCountPerPage={10}
+              totalItemsCount={repos.length}
+              pageRangeDisplayed={3}
+              onChange={handlePageChange}
+              itemClass='page-item page-link'
+              activeClass='active'
+            />
+          </div>
         </Fragment>
       ) : (
         <Fragment>
