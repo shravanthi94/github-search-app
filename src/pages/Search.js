@@ -12,6 +12,7 @@ const Search = () => {
 
   const [activePage, setactivePage] = useState(1);
 
+  // Github API call to get all the repositories
   const onSubmit = (e, value) => {
     e.preventDefault();
     if (value === '') {
@@ -30,15 +31,17 @@ const Search = () => {
       .catch((error) => console.error(error));
   };
 
-  // Logic for displaying current
-  const indexOfLast = activePage * 10;
-  const indexOfFirst = indexOfLast - 10;
+  // Logic for displaying pages
+  const indexOfLast = activePage * 5;
+  const indexOfFirst = indexOfLast - 5;
   const currentRepos = repos.slice(indexOfFirst, indexOfLast);
 
+  // Handle page change
   const handlePageChange = (pageNumber) => {
     setactivePage(pageNumber);
   };
 
+  // Sort the result list based on different criteria ---> Good fit as default
   const sortList = (e) => {
     e.preventDefault();
     setsort(e.target.value);
@@ -101,7 +104,7 @@ const Search = () => {
           <div className='pagination'>
             <Pagination
               activePage={activePage}
-              itemsCountPerPage={10}
+              itemsCountPerPage={5}
               totalItemsCount={repos.length}
               pageRangeDisplayed={3}
               onChange={handlePageChange}

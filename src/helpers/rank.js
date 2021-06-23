@@ -18,6 +18,9 @@ const calculateRank = (data) => {
     }
   });
 
+  // Find the weighted average using different parameters
+  // Formula = (starCount / MaxStars * 6) - (issueCount / MaxIssues * 2) + (itemCount / MaxForks) * 2
+
   data.forEach((item) => {
     item.rank =
       (item.stargazers_count / maxStars) * 6 -
