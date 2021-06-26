@@ -8,5 +8,5 @@ This application allows you to search for well-maintained repositories based on 
 2. Run 'npm start' to start the application.
 3. The application will start on localhost (http://localhost:3000)
 
-screencapture-localhost-3000-2021-06-26-15_40_14.png![screencapture-localhost-3000-2021-06-26-15_40_14](https://user-images.githubusercontent.com/57304916/123527494-f773d700-d694-11eb-84f5-0392f94457e3.png)
+![screencapture-localhost-3000-2021-06-26-15_40_14](https://user-images.githubusercontent.com/57304916/123527494-f773d700-d694-11eb-84f5-0392f94457e3.png)
 
