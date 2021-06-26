@@ -4,6 +4,9 @@ This application allows you to search for well-maintained repositories based on 
 
 ## Steps to run the application:
 
-In the project directory, you can run: 'npm install' to install all the dependent packages and the run 'npm start' to run the application. The application will start on localhost (http://localhost:3000). 
+1. In the project directory, you can run: 'npm install' to install all the dependent packages.
+2. Run 'npm start' to start the application.
+3. The application will start on localhost (http://localhost:3000)
 
-![image](https://user-images.githubusercontent.com/57304916/123014816-e1f06b80-d37b-11eb-8801-d3ed999e01e1.png)
+screencapture-localhost-3000-2021-06-26-15_40_14.png![screencapture-localhost-3000-2021-06-26-15_40_14](https://user-images.githubusercontent.com/57304916/123527494-f773d700-d694-11eb-84f5-0392f94457e3.png)
+
