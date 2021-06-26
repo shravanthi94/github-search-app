@@ -71,7 +71,7 @@ const Search = () => {
       <Navbar onSubmit={onSubmit} />
       {repos.length !== 0 ? (
         <Fragment>
-          <div class='container my-4 border-bottom'>
+          <div class='container mt-4 mb-2 border-bottom'>
             <div class='row'>
               <div class='col-4'>
                 <h3>{repos.length} repositories</h3>

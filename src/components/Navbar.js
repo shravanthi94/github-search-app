@@ -25,7 +25,7 @@ const Navbar = ({ onSubmit }) => {
 
       <form class='form-inline my-2 my-lg-0 mr-4'>
         <input
-          class='form-control mr-sm-2'
+          class='form-control mr-sm-2 px-5'
           type='search'
           placeholder='Search or jump to...'
           name='query'
