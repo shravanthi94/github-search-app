@@ -50,6 +50,17 @@ const Repo = (props) => {
               <p>{props.issues}</p>
             </div>
           </div>
+          <div class='p-2'>
+            <div class='d-flex flex-row'>
+              {props.license != null ? (
+                <a id={props.licenseKey} href={props.licenseUrl}>
+                  {props.licenseName}
+                </a>
+              ) : (
+                <p>No license</p>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </li>

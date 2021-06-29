@@ -17,6 +17,7 @@ const RepoList = ({ repos }) => {
             issues={repo.open_issues_count}
             rank={repo.rank}
             language={repo.language}
+            license={repo.license}
           />
         ))}
       </ul>
