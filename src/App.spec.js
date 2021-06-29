@@ -1,10 +1,12 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount, shallow, configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import axios from 'axios';
 import { act } from 'react-dom/test-utils';
 import data from './Data';
-
 import Search from './pages/Search';
+
+configure({ adapter: new Adapter() });
 
 jest.mock('axios');
 
